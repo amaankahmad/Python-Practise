@@ -2,9 +2,9 @@ from random import randint
 import time
 
 valid = 1
+
 # List of possible answers computer picks from
 Game = ["Rock", "Paper", "Scissors"]
-
 
 def compare (x,y):
      # Convert all variables to lower case in case user input differs from specified

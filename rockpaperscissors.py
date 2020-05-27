@@ -3,12 +3,37 @@ import math
 import time
 
 valid = 1
+# List of possible answers computer picks from
+Game = ["Rock", "Paper", "Scissors"]
+
+
+def compare (x,y):
+     # Convert all variables to lower case in case user input differs from specified
+    if Game[y-1].lower() == x.lower():
+        return("\nDraw!\nPlay again:")
+    elif Game[y-1].lower() == "rock":
+        if x.lower() == "scissors": 
+            return("\nYou Lose!\nPlay again:")  
+        elif x.lower() == "paper": 
+            return("\nYou Win!\nPlay again:")
+    elif Game[y-1].lower() == "paper":
+        if x.lower() == "rock": 
+            return("\nYou Lose!\nPlay again:")  
+        elif x.lower() == "scissors": 
+            return("\nYou Win!\nPlay again:")
+    elif Game[y-1].lower() == "scissors":
+        if x.lower() == "paper": 
+            return("\nYou Lose!\nPlay again:")  
+        elif x.lower() == "rock": 
+            return("\nYou Win!\nPlay again:")
+    else:
+        return("\nInvalid input - try again! \n")
 
 while valid == 1:
     # Check if player wants to play:
     z = input("Ready to play Rock, Paper Scissors?"+" ")
     # Convert all inputs to lower case in case user input differs from specified
-    if z.lower() == "yes":
+    if z.lower() == "yes" or == "yep" or == "yeah" or == "yh":
         valid = 1
     else:
         break
@@ -23,33 +48,13 @@ while valid == 1:
     time.sleep(1)
 
     # Get input play from user
-    x = input("Rock, Paper or Scissors?"+" ")
+    user_input = input("Rock, Paper or Scissors?"+" ")
 
     # Computer picks at random
-    y = randint(0,3)
-
-    # List of possible answers computer picks from
-    Game = ["Rock", "Paper", "Scissors"]
+    computer_random = randint(0,3)
 
     # Prints game outcome
-    print("\nI picked:", Game[y-1])
+    print("\nI picked:", Game[computer_random-1])
+    print(compare(user_input, computer_random))
 
-    # Convert all variables to lower case in case user input differs from specified
-    if Game[y-1].lower() == x.lower():
-        print("\nDraw!\n")
-    elif Game[y-1].lower() == "rock":
-        if x.lower() == "scissors": 
-            print("\nYou Lose!\n")  
-        elif x.lower() == "paper": 
-            print("\nYou Win!\n")
-    elif Game[y-1].lower() == "paper":
-        if x.lower() == "rock": 
-            print("\nYou Lose!\n")  
-        elif x.lower() == "scissors": 
-            print("\nYou Win!\n")
-    elif Game[y-1].lower() == "scissors":
-        if x.lower() == "paper": 
-            print("\nYou Lose!\n")  
-        elif x.lower() == "rock": 
-            print("\nYou Win!\n")
 

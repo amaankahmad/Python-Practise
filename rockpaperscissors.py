@@ -47,6 +47,7 @@ while valid == 1:
     # Get input play from user
     user_input = input("Rock, Paper or Scissors?"+" ")
 
+    # Check if user input is valid
     if user_input.lower() in Game:
         # Computer picks at random
         computer_random = randint(0,3)

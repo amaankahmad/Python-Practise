@@ -57,7 +57,7 @@ while valid == 1:
         print(compare(user_input, computer_random))
 
     else:
-        # Check if input valid
+        # Input invalid
         print("\nInvalid input - try again!\n")
 
 
